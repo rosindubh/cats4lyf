@@ -6,7 +6,10 @@ function Home() {
 
             <div>
                 <div>
-                <h1>Your New Cat</h1>
+                {/* main heading */}
+                <h1>Your PURRfect pet</h1>
+                {/* Introduction */}
+                <h2>A home without a cat is only a house.</h2>
 
                 </div>
                   <ul>
@@ -19,6 +22,7 @@ function Home() {
             </div>
 
             <div>
+                {/* Welfare advice */}
                 <h2>The five welfare needs</h2>
             </div>
 
@@ -33,6 +37,7 @@ function Home() {
             </div>
 
             <div>
+                {/* Safe introduction to new home advise */}
                 <h2>Make your home cat safe</h2>
                 <p>Many people have no idea that certain normal household items can be deathly to cats. Bouquets containing lilies are a no-no for cat owners. The pollen is highly toxic and at our veterinary hospitals we do treat cats who have been poisoned by licking the pollen from their fur.
 
@@ -41,7 +46,7 @@ Make sure to keep cleaning products and medicines stored safely away. Cats love 
 Antifreeze is also toxic to cats and can cause vomiting, seizures and breathing difficulties, among other health problems. Keep your cat inside when cars are being de-iced, and call your vet immediately if you think your pet has swallowed any.</p>
             </div>
  
-
+            {/* footer */}
             <footer className="footer">
                 <div>
                     <p>Copyright Cats4$ale &copy; 2021</p>
