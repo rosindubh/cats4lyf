@@ -43,7 +43,7 @@ function App() {
                             Cats
                         </Link>
                         <Link to="/cart" className="item">
-                        <span>{lnrCart}</span>
+                        <img src={lnrCart} alt=""/>
                         </Link>
                     </div>
                 </header>
