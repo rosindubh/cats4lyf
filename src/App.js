@@ -5,6 +5,8 @@ import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
 import lnrCart from './images/lnrCart.svg'
+//import lnrCart from './images/lnrCart2.png'
+
 // import CatInfo from "./Components/CatInfo"
 
 import "./App.css";
@@ -44,7 +46,7 @@ function App() {
                             Cats
                         </Link>
                         <Link to="/cart" className="item">
-                        <img src={lnrCart} alt=""/>
+                        <img src={lnrCart} alt="" height="35px"/>
                         </Link>
                     </div>
                 </header>
