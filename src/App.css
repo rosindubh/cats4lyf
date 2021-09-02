@@ -137,4 +137,5 @@ a.item {
 footer {
     display: flex;
     justify-content: center;
+    color: var(--pacific-blue)
 }
