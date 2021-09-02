@@ -42,8 +42,10 @@ a.item {
     font-size: 1.5rem;
 }
 
-
-
+/*Home*/
+.main {
+    background-image: url("./images/home-page.png");
+}
 
 /* Cats CSS */
 #cat-Thumbnail {
