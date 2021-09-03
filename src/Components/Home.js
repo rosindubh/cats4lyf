@@ -1,6 +1,7 @@
 function Home() {
     return (
         <div className="home">
+            <div className="home-text">
             <div>
                 <div>
                     {/* main heading */}
@@ -91,6 +92,7 @@ function Home() {
                     <p>Copyright Cats4$ale &copy; 2021</p>
                 </div>
             </footer>
+            </div>
         </div>
     );
 }

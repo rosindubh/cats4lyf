@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import crossImage from "../images/crossImage.svg";
 import Basket from "./Basket"
 
@@ -22,6 +23,9 @@ function Cart({ cart, setCart, cartOpen, setCartOpen }) {
                 ))}
                 <div className="cart-total">
                     <h2>Total Price: £{newArr}</h2>
+                    <Link to= '/Checkout'>
+                    <button onClick={handleCart}>checkout</button>
+                </Link>
                 </div>
             </div>
         </>

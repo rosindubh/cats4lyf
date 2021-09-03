@@ -7,7 +7,8 @@ import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
 import cartImage from "./images/cartImage.svg";
 //import lnrCart from './images/lnrCart2.png'
-// import CatInfo from "./Components/CatInfo"
+import CatInfo from "./Components/CatInfo";
+import Checkout from "./Components/Checkout";
 
 import "./App.css";
 
@@ -90,7 +91,26 @@ function App() {
                             </div>
                         </div>
                     </Route>
-                    {/* <Route path="/cats/"><CatInfo cats={cats}/></Route> */}
+                    {cats.map((cat) => (
+                        <Route path={`/cats/${cat.name}`}>
+                            <CatInfo
+                                name={cat.name}
+                                image={cat.image.url}
+                                temperament={cat.temperament}
+                                childFriendly={cat.child_friendly}
+                                description={cat.description}
+                                intelligence={cat.intelligence}
+                                affection={cat.affection_level}
+                                price={cat.price}
+                                cart={cart}
+                                setCart={setCart}
+                                id={cat.reference_image_id}
+                            />
+                        </Route>
+                    ))}
+                    <Route path="/checkout">
+                        <Checkout cart={cart} setCart={setCart}/>
+                    </Route>
                 </div>
             </div>
         </Router>
