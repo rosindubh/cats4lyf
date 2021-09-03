@@ -6,7 +6,7 @@ import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
 import cartImage from "./images/cartImage.svg";
-//import lnrCart from './images/lnrCart2.png'
+import lnrCart6 from './images/lnrCart6.png'
 import CatInfo from "./Components/CatInfo";
 import Checkout from "./Components/Checkout";
 
@@ -28,12 +28,31 @@ function App() {
         });
         setCats(catPrice);
     };
+
     useEffect(() => {
         getCats();
+        getLocalStorage();
     }, []);
+
+    useEffect(() => {
+        saveLocalStorage();
+    }, [cart]);
 
     const handleCart = () => {
         cartOpen ? setCartOpen(false) : setCartOpen(true);
+    };
+
+    const saveLocalStorage = () => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    };
+
+    const getLocalStorage = () => {
+        if (localStorage.getItem("cart") === null) {
+            localStorage.setItem("cart", JSON.stringify([]));
+        } else {
+            let localCart = JSON.parse(localStorage.getItem("cart"));
+            setCart(localCart);
+        }
     };
 
     return (
@@ -47,11 +66,11 @@ function App() {
                         <Link to="/cats" className="item">
                             Cats
                         </Link>
-
+                        
                         <img
-                            src={cartImage}
+                            src={lnrCart6}
                             alt=""
-                            className="item"
+                            className="cart-image"
                             onClick={handleCart}
                         />
                         <ReactModal
@@ -109,7 +128,7 @@ function App() {
                         </Route>
                     ))}
                     <Route path="/checkout">
-                        <Checkout cart={cart} setCart={setCart}/>
+                        <Checkout cart={cart} setCart={setCart} />
                     </Route>
                 </div>
             </div>

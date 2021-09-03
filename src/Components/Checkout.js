@@ -4,20 +4,24 @@ const CheckOut = ({ cart, setCart }) => {
     let newArr = cart.reduce((sum, curr) => {
         return sum + curr.price;
     }, 0);
+
+    const clearStorage = () =>{
+        localStorage.setItem("cart", JSON.stringify([]))
+    }
     return (
         <div className="checkout-wrapper">
             <div className="form-div">
                 <form className="add-form">
                     <div className="form-control">
-                        <label>Name</label>
+                        <label>Name </label>
                         <input type="text" placeholder="Enter Name" />
                     </div>
                     <div className="form-control">
-                        <label>Address</label>
+                        <label>Address </label>
                         <input type="text" placeholder="Enter Address" />
                     </div>
                     <div className="form-control">
-                        <label>Email</label>
+                        <label>Email </label>
                         <input type="text" placeholder="Enter Email" />
                     </div>
 
@@ -26,6 +30,7 @@ const CheckOut = ({ cart, setCart }) => {
                         value="Proceed to payment"
                         className="btn
             btn-block"
+                        onClick={clearStorage}
                     />
                 </form>
             </div>

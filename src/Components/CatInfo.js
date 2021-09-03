@@ -9,11 +9,19 @@ function CatInfo({
     price,
     cart,
     setCart,
-    id
+    id,
 }) {
     const submitToCart = (e) => {
         e.preventDefault();
-        setCart([...cart, { name: name, price: price, id: id }]);
+        setCart([
+            ...cart,
+            {
+                name: name,
+                price: price,
+                id: id,
+                cartID: Math.floor(Math.random() * 1000000),
+            },
+        ]);
     };
     return (
         <>
@@ -21,7 +29,10 @@ function CatInfo({
                 <div className="cat-container">
                     <h1>{name}</h1>
                     <img className="cat-info-image" src={image} alt="" />
-                
+
+                    <p>
+                        <strong>Price:</strong> £{price}
+                    </p>
                     <p>
                         <strong>Temperament:</strong> {temperament}
                     </p>

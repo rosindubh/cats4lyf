@@ -44,7 +44,12 @@ a:hover > h2 {
 
 a.item {
     margin: 0 1.5rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
+}
+
+.cart-image{
+    margin-top:1rem;
+    height:2rem;
 }
 
 /*Home*/
@@ -109,7 +114,7 @@ a.item {
 
 .cart-container {
     background-color: #fff;
-    width: 20vw;
+    width: 30vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -123,15 +128,21 @@ a.item {
     text-align: center;
 }
 .item-information {
+    display: flex;
     background-color: #fff;
     width: 100%;
     flex-basis: 50%;
+    padding-right: 3%;
     text-align: center;
+}
+.item-name{
+    margin-left:1rem;
+
 }
 .item-price {
     background-color: #fff;
     width: 100%;
-    flex-basis: 50%;
+    flex-basis: 30%;
     text-align: right;
     padding-right: 2rem;
 }
@@ -142,6 +153,11 @@ a.item {
     border: 2px solid black;
     text-align: right;
     padding: 0 2rem;
+}
+.cart-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .cart-title {
     text-align: center;
@@ -164,14 +180,16 @@ footer {
 
 /* Modal CSS */
 .Modal {
-    position: fixed;
+    position: relative;
     background-color: yellow;
+    max-height: 90%;
 }
 
 .Overlay {
     position: absolute;
     top: 11%;
-    right: 25%;
+    right: 5%;
+    max-height: fit-content;
 }
 
 .home {
@@ -222,6 +240,11 @@ img.cat-info-image{
     align-items: center;
     margin-top: 5%;
 }
+
+.form-control{
+    margin: 20px;
+}
+
 .checkout-div {
     background-color: #fff;
     width: 20vw;
