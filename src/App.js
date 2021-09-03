@@ -13,11 +13,7 @@ import "./App.css";
 
 function App() {
     const [cats, setCats] = useState([]);
-    const [cart, setCart] = useState([
-        { name: "Liam", price: 399 },
-        { name: "Joe", price: 299 },
-        { name: "Phil", price: 499 },
-    ]);
+    const [cart, setCart] = useState([]);
     const [cartOpen, setCartOpen] = useState(false);
 
     const getCats = async () => {
@@ -57,8 +53,17 @@ function App() {
                             className="item"
                             onClick={handleCart}
                         />
-                        <ReactModal isOpen={cartOpen} className="Modal" overlayClassName="Overlay">
-                            <Cart cart={cart} cartOpen={cartOpen} setCartOpen={setCartOpen}/>
+                        <ReactModal
+                            isOpen={cartOpen}
+                            className="Modal"
+                            overlayClassName="Overlay"
+                        >
+                            <Cart
+                                cart={cart}
+                                setCart={setCart}
+                                cartOpen={cartOpen}
+                                setCartOpen={setCartOpen}
+                            />
                         </ReactModal>
                     </div>
                 </header>
@@ -69,7 +74,21 @@ function App() {
                     </Route>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/cats">
-                        <Cats cats={cats} carts={cart} setCart={setCart} />
+                        <div className="cat-wrapper">
+                            <div id="cat-Thumbnail">
+                                {cats.map((cat) => (
+                                    <Cats
+                                        name={cat.name}
+                                        price={cat.price}
+                                        image={cat.image.url}
+                                        cart={cart}
+                                        setCart={setCart}
+                                        id={cat.reference_image_id}
+                                        key={cat.reference_image_id}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </Route>
                     {/* <Route path="/cats/"><CatInfo cats={cats}/></Route> */}
                 </div>

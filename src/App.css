@@ -136,6 +136,11 @@ a.item {
     align-items: center;
 }
 
+.home-cat-safe {
+    display: flex;
+    padding-right: 45%;
+}
+
 /* Footer CSS*/
 footer {
     display: flex;
@@ -153,4 +158,8 @@ footer {
     position: absolute;
     top: 11%;
     right: 25%;
+}
+
+.home {
+    color: rgb(0, 0, 0);
 }

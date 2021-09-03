@@ -1,33 +1,20 @@
-import { BrowserRouter as Router } from "react-router-dom";
+function Cats({ name, price, image, cart, setCart,id}) {
+    const submitToCart = (e) => {
+        e.preventDefault();
+        setCart([...cart, { name: name, price: price, id: id }]);
+    };
 
-//Test comment - Joe
 
-function Cats({ cats }) {
+    // Math.floor(Math.random() *100000)
     return (
-        <Router>
-            <div className="cat-wrapper">
-                <div id="cat-Thumbnail">
-                    {cats.map((cat) => (
-                        // <Link to={`/cats/${cat.name}`}>
-                        <div id="cat-Card">
-                            <h3 id="cat-Price">£{cat.price}</h3>
-                            <h2 id="cat-Name">{cat.name}</h2>
-                            <br></br>
-                            <img
-                                src={cat.image.url}
-                                alt=""
-                                id="cat-Image"
-                            ></img>
-                        </div>
-                        // {/* </Link> */}
-                    ))}
-                </div>
-            </div>
-        </Router>
+        <div id="cat-Card">
+            <button onClick={submitToCart}>Add to Cart</button>
+            <h3 id="cat-Price">£{price}</h3>
+            <h2 id="cat-Name">{name}</h2>
+            <br></br>
+            <img src={image} alt="" id="cat-Image"></img>
+        </div>
     );
 }
 
 export default Cats;
-
-// HomePage > Cats > CatsInfo
-// localhost:300/cats/breedname
