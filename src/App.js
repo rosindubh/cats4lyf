@@ -1,11 +1,9 @@
-// hello from phil
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
-import cartImage from "./images/cartImage.svg";
 import lnrCart6 from './images/lnrCart6.png'
 import CatInfo from "./Components/CatInfo";
 import Checkout from "./Components/Checkout";

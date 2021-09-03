@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import crossImage from "../images/crossImage.svg";
 import Basket from "./Basket";
