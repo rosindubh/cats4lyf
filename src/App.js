@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
 import cartImage from "./images/cartImage.svg";
+//import lnrCart from './images/lnrCart2.png'
 // import CatInfo from "./Components/CatInfo"
 
 import "./App.css";
