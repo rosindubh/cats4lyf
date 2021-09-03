@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/cats4lyf/static/css/main.75359ca8.chunk.css",
+    "main.js": "/cats4lyf/static/js/main.8483493d.chunk.js",
+    "main.js.map": "/cats4lyf/static/js/main.8483493d.chunk.js.map",
+    "runtime-main.js": "/cats4lyf/static/js/runtime-main.b89e6782.js",
+    "runtime-main.js.map": "/cats4lyf/static/js/runtime-main.b89e6782.js.map",
+    "static/js/2.b4be70b3.chunk.js": "/cats4lyf/static/js/2.b4be70b3.chunk.js",
+    "static/js/2.b4be70b3.chunk.js.map": "/cats4lyf/static/js/2.b4be70b3.chunk.js.map",
+    "index.html": "/cats4lyf/index.html",
+    "static/css/main.75359ca8.chunk.css.map": "/cats4lyf/static/css/main.75359ca8.chunk.css.map",
+    "static/js/2.b4be70b3.chunk.js.LICENSE.txt": "/cats4lyf/static/js/2.b4be70b3.chunk.js.LICENSE.txt",
+    "static/media/crossImage.2e09a284.svg": "/cats4lyf/static/media/crossImage.2e09a284.svg",
+    "static/media/App.css": "/cats4lyf/static/media/gausian-blur-home-page.1c440d39.png",
+    "static/media/lnrCart6.0edb5901.png": "/cats4lyf/static/media/lnrCart6.0edb5901.png",
+    "static/media/minusImage.dfd53cf8.svg": "/cats4lyf/static/media/minusImage.dfd53cf8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b89e6782.js",
+    "static/js/2.b4be70b3.chunk.js",
+    "static/css/main.75359ca8.chunk.css",
+    "static/js/main.8483493d.chunk.js"
+  ]
+}
