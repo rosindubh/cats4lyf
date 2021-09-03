@@ -38,13 +38,13 @@ function CatInfo({
                     </p>
                     <p>
                         <strong>Child Friendly Rating:</strong> {childFriendly}
-                        /10
+                        /5
                     </p>
                     <p>
-                        <strong>Intelligence Rating:</strong> {intelligence}/10
+                        <strong>Intelligence Rating:</strong> {intelligence}/5
                     </p>
                     <p>
-                        <strong>Affection Rating:</strong> {affection}/10
+                        <strong>Affection Rating:</strong> {affection}/5
                     </p>
                     <p>
                         <strong>Description:</strong> {description}
