@@ -15,6 +15,7 @@ function App() {
     const [cart, setCart] = useState([]);
     const [cartOpen, setCartOpen] = useState(false);
 
+
     const getCats = async () => {
         const response = await fetch(
             "https://api.thecatapi.com/v1/breeds?limit=10"
