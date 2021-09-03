@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap");
 
 :root {
     --dark-jungle-green: #182825ff;
@@ -10,7 +10,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'Mukta', sans-serif;
+    font-family: "Mukta", sans-serif;
 }
 
 a {
@@ -42,10 +42,13 @@ a.item {
     font-size: 1.5rem;
 }
 
+
 /*Home*/
 .home {
     background-image: url("./images/home-page.png");
 }
+
+
 
 /* Cats CSS */
 #cat-Thumbnail {
@@ -95,9 +98,8 @@ a.item {
 
 .cart-container {
     background-color: #fff;
-    width: 100vw;
-    height: 90vh;
-    padding: 10% 30%;
+    width: 20vw;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -116,7 +118,7 @@ a.item {
     text-align: center;
 }
 .item-price {
-    background-color:  #fff;;
+    background-color: #fff;
     width: 100%;
     flex-basis: 50%;
     text-align: right;
@@ -128,10 +130,14 @@ a.item {
     width: 100%;
     border: 2px solid black;
     text-align: right;
-    padding-right: 2rem;
+    padding: 0 2rem;
 }
-.cart-title{
+.cart-title {
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 footer {
@@ -139,3 +145,16 @@ footer {
     justify-content: center;
     color: var(--pacific-blue)
 }
+
+
+.Modal {
+    position: fixed;
+    background-color: yellow;
+}
+
+.Overlay {
+    position: absolute;
+    top: 11%;
+    right: 25%;
+}
+

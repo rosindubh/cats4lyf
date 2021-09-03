@@ -1,12 +1,12 @@
 // hello from phil
 import { useEffect, useState } from "react";
+import ReactModal from "react-modal";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
-import lnrCart from './images/lnrCart.svg'
+import cartImage from "./images/cartImage.svg";
 //import lnrCart from './images/lnrCart2.png'
-
 // import CatInfo from "./Components/CatInfo"
 
 import "./App.css";
@@ -18,6 +18,7 @@ function App() {
         { name: "Joe", price: 299 },
         { name: "Phil", price: 499 },
     ]);
+    const [cartOpen, setCartOpen] = useState(false);
 
     const getCats = async () => {
         const response = await fetch(
@@ -26,13 +27,17 @@ function App() {
         const data = await response.json();
         const catPrice = data.map((object) => {
             object["price"] = Math.floor(Math.random() * 1000) + 300;
-            return object
+            return object;
         });
         setCats(catPrice);
     };
     useEffect(() => {
         getCats();
     }, []);
+
+    const handleCart = () => {
+        cartOpen ? setCartOpen(false) : setCartOpen(true);
+    };
 
     return (
         <Router>
@@ -45,9 +50,16 @@ function App() {
                         <Link to="/cats" className="item">
                             Cats
                         </Link>
-                        <Link to="/cart" className="item">
-                        <img src={lnrCart} alt="" height="35px"/>
-                        </Link>
+
+                        <img
+                            src={cartImage}
+                            alt=""
+                            className="item"
+                            onClick={handleCart}
+                        />
+                        <ReactModal isOpen={cartOpen} className="Modal" overlayClassName="Overlay">
+                            <Cart cart={cart} cartOpen={cartOpen} setCartOpen={setCartOpen}/>
+                        </ReactModal>
                     </div>
                 </header>
 
