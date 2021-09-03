@@ -1,6 +1,7 @@
 function Home() {
     return (
         <div className="home">
+            <div className="home-text">
             <div>
                 <div>
                     {/* main heading */}
@@ -68,7 +69,7 @@ function Home() {
             <div>
                 {/* Safe introduction to new home advise */}
                 <h2>Make your home cat safe</h2>
-                <p>
+                <p className="home-cat-safe">
                     Many people have no idea that certain normal household items
                     can be deathly to cats. Bouquets containing lilies are a
                     no-no for cat owners. The pollen is highly toxic and at our
@@ -91,6 +92,7 @@ function Home() {
                     <p>Copyright Cats4$ale &copy; 2021</p>
                 </div>
             </footer>
+            </div>
         </div>
     );
 }

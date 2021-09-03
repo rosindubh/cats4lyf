@@ -6,18 +6,15 @@ import Home from "./Components/Home";
 import Cats from "./Components/Cats";
 import Cart from "./Components/Cart";
 import cartImage from "./images/cartImage.svg";
-//import lnrCart from './images/lnrCart2.png'
-// import CatInfo from "./Components/CatInfo"
+import lnrCart6 from './images/lnrCart6.png'
+import CatInfo from "./Components/CatInfo";
+import Checkout from "./Components/Checkout";
 
 import "./App.css";
 
 function App() {
     const [cats, setCats] = useState([]);
-    const [cart, setCart] = useState([
-        { name: "Liam", price: 399 },
-        { name: "Joe", price: 299 },
-        { name: "Phil", price: 499 },
-    ]);
+    const [cart, setCart] = useState([]);
     const [cartOpen, setCartOpen] = useState(false);
 
     const getCats = async () => {
@@ -31,12 +28,31 @@ function App() {
         });
         setCats(catPrice);
     };
+
     useEffect(() => {
         getCats();
+        getLocalStorage();
     }, []);
+
+    useEffect(() => {
+        saveLocalStorage();
+    }, [cart]);
 
     const handleCart = () => {
         cartOpen ? setCartOpen(false) : setCartOpen(true);
+    };
+
+    const saveLocalStorage = () => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    };
+
+    const getLocalStorage = () => {
+        if (localStorage.getItem("cart") === null) {
+            localStorage.setItem("cart", JSON.stringify([]));
+        } else {
+            let localCart = JSON.parse(localStorage.getItem("cart"));
+            setCart(localCart);
+        }
     };
 
     return (
@@ -50,15 +66,24 @@ function App() {
                         <Link to="/cats" className="item">
                             Cats
                         </Link>
-
+                        
                         <img
-                            src={cartImage}
+                            src={lnrCart6}
                             alt=""
-                            className="item"
+                            className="cart-image"
                             onClick={handleCart}
                         />
-                        <ReactModal isOpen={cartOpen} className="Modal" overlayClassName="Overlay">
-                            <Cart cart={cart} cartOpen={cartOpen} setCartOpen={setCartOpen}/>
+                        <ReactModal
+                            isOpen={cartOpen}
+                            className="Modal"
+                            overlayClassName="Overlay"
+                        >
+                            <Cart
+                                cart={cart}
+                                setCart={setCart}
+                                cartOpen={cartOpen}
+                                setCartOpen={setCartOpen}
+                            />
                         </ReactModal>
                     </div>
                 </header>
@@ -69,9 +94,42 @@ function App() {
                     </Route>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/cats">
-                        <Cats cats={cats} carts={cart} setCart={setCart} />
+                        <div className="cat-wrapper">
+                            <div id="cat-Thumbnail">
+                                {cats.map((cat) => (
+                                    <Cats
+                                        name={cat.name}
+                                        price={cat.price}
+                                        image={cat.image.url}
+                                        cart={cart}
+                                        setCart={setCart}
+                                        id={cat.reference_image_id}
+                                        key={cat.reference_image_id}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </Route>
-                    {/* <Route path="/cats/"><CatInfo cats={cats}/></Route> */}
+                    {cats.map((cat) => (
+                        <Route path={`/cats/${cat.name}`}>
+                            <CatInfo
+                                name={cat.name}
+                                image={cat.image.url}
+                                temperament={cat.temperament}
+                                childFriendly={cat.child_friendly}
+                                description={cat.description}
+                                intelligence={cat.intelligence}
+                                affection={cat.affection_level}
+                                price={cat.price}
+                                cart={cart}
+                                setCart={setCart}
+                                id={cat.reference_image_id}
+                            />
+                        </Route>
+                    ))}
+                    <Route path="/checkout">
+                        <Checkout cart={cart} setCart={setCart} />
+                    </Route>
                 </div>
             </div>
         </Router>
