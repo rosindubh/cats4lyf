@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import crossImage from "../images/crossImage.svg";
-import Basket from "./Basket"
+import Basket from "./Basket";
 
 function Cart({ cart, setCart, cartOpen, setCartOpen }) {
     let newArr = cart.reduce((sum, curr) => {
@@ -9,6 +10,25 @@ function Cart({ cart, setCart, cartOpen, setCartOpen }) {
     const handleCart = () => {
         cartOpen ? setCartOpen(false) : setCartOpen(true);
     };
+
+    const CartRender = () => {
+        return (
+            <>
+                {cart.map((item) => (
+                    <Basket
+                        key={item.id}
+                        cartID={item.cartID}
+                        item={item}
+                        cart={cart}
+                        setCart={setCart}
+                        price={item.price}
+                        name={item.name}
+                    />
+                ))}
+            </>
+        );
+    };
+
     return (
         <>
             <div className="cart-container">
@@ -18,14 +38,12 @@ function Cart({ cart, setCart, cartOpen, setCartOpen }) {
                         <img src={crossImage} onClick={handleCart} alt="" />
                     </div>
                 </div>
-                {cart.map((item) => (
-                <Basket key={item.id} cartID={item.cartID} item={item} cart={cart} setCart={setCart} price={item.price} name={item.name} />
-                ))}
+                <CartRender />
                 <div className="cart-total">
                     <h2>Total Price: £{newArr}</h2>
-                    <Link to= '/Checkout'>
-                    <button onClick={handleCart}>checkout</button>
-                </Link>
+                    <Link to="/Checkout">
+                        <button onClick={handleCart}>checkout</button>
+                    </Link>
                 </div>
             </div>
         </>
