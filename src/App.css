@@ -42,13 +42,10 @@ a.item {
     font-size: 1.5rem;
 }
 
-
 /*Home*/
 .home {
     background-image: url("./images/home-page.png");
 }
-
-
 
 /* Cats CSS */
 #cat-Thumbnail {
@@ -137,16 +134,16 @@ a.item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
+/* Footer CSS*/
 footer {
     display: flex;
     justify-content: center;
-    color: var(--pacific-blue)
+    color: var(--pacific-blue);
 }
 
-
+/* Modal CSS */
 .Modal {
     position: fixed;
     background-color: yellow;
@@ -157,4 +154,3 @@ footer {
     top: 11%;
     right: 25%;
 }
-
